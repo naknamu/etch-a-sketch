@@ -66,9 +66,14 @@ button.addEventListener('click', function()
         squareAll[i].style.backgroundColor = "green";
     }
 
-    let newSquareNumber = parseInt(prompt("Enter number of squares per side: ", 16));
-    //change the new value of square
-    squareNumber = newSquareNumber;
+    let newSquareNumber = parseInt(prompt("Enter number of squares per side (max. 100): ", 16));
+    //change the new value of square with a maximum of 100
+    if (newSquareNumber >= 100)
+    {
+        squareNumber = 100;
+    } else {
+        squareNumber = newSquareNumber;
+    }
 
     //delete previous grid
     deleteSquareGrid();
